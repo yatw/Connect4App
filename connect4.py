@@ -61,7 +61,6 @@ class Connect4():
         self.is_winning_move(max_row, column)
 
         self.round+=1
-        print(self.round)
         if (self.has_winner == False and (self.round > (self.board_max_row+1) * (self.board_max_col+1))):
             self.tie = True  # board is full, tie
 

@@ -1,6 +1,16 @@
-td.yes {
-  background-color: green;
+html, body {
+  height: 100%;
 }
-td.no {
-  background-color: red;
+
+body {
+  display: flex;
+  flex-flow: column;
+}
+
+.center_padding{
+ margin-top:120px;
+}
+
+footer {
+  margin-top: auto;
 }
