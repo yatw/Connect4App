@@ -13,9 +13,16 @@
 	</head>
 	<body>
 	
+	<div>
+		<audio autoplay hidden id="music_player">
+		<source src= {{  url_for('static', filename='Niya - A Beginning (Vlog No Copyright Music).mp3' )  }} type="audio/mpeg">
+			If you're reading this, audio isn't supported. 
+		</audio>
+	</div>
+	
 	<div class="alert hide alert-primary" id="gameresult">
 		<button type="button" class="close" data-dismiss="alert">x</button>
-		<p id="whowin">something</p>
+		<p id="whowin"></p>
 	</div>
 
 	<table id="gamegrid" class="table table-bordered col col-md-4" align="center">
@@ -89,7 +96,8 @@
 	</table>
 	
 	<div align="center">
-		<button type="button" class="btn btn-success" >New Game!!</button>
+		<button id="restartbtn" type="button" class="btn btn-success" >New Game!!</button>
+		<button id="musiccontrol" type="button" class="btn btn-primary">Stop Music</button>
 	</div>
     <!-- Optional JavaScript -->		
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

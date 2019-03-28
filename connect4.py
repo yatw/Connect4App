@@ -3,28 +3,36 @@ class Connect4():
 
 
     def __init__(self):
-        self.board = self.initalize_board()
+        
+        self.board = None
+
+        self.initalize_board()
         self.board_max_row = 5
         self.board_max_col = 6
 
-        
-        self.round = 0
+        self.round = 1
         self.player_color = 1
         self.has_winner = False
+        self.tie = False
 
 
     def initalize_board(self):
 
-        #   PC     0 1 2 3 4 5 6 x=column
-        #   user   1 2 3 4 5 6 7
-        board = [ [0,0,0,0,0,0,0], # 0 1 y=row
-                  [0,0,0,0,0,0,0], # 1 2 
-                  [0,0,0,0,0,0,0], # 2 3
-                  [0,0,0,0,0,0,0], # 3 4
-                  [0,0,0,0,0,0,0], # 4 5 
-                  [0,0,0,0,0,0,0]  # 5 6
-                ]
-        return board
+        self.board = [
+                       [0,0,0,0,0,0,0], 
+                       [0,0,0,0,0,0,0], 
+                       [0,0,0,0,0,0,0], 
+                       [0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0],
+                       [0,0,0,0,0,0,0]
+                     ]
+
+        self.round = 1
+        self.player_color = 1
+        self.has_winner = False
+        self.tie = False
+        
+        return None
 
 
     def update_player_color(self):
@@ -51,6 +59,11 @@ class Connect4():
 
 
         self.is_winning_move(max_row, column)
+
+        self.round+=1
+        print(self.round)
+        if (self.has_winner == False and (self.round > (self.board_max_row+1) * (self.board_max_col+1))):
+            self.tie = True  # board is full, tie
 
         return max_row
 
